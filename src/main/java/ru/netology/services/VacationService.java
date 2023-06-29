@@ -1,21 +1,21 @@
 package ru.netology.services;
 
-public class vacationService {
-    public int calculateVacationMonths (int income, int expense, int treshold) {
+public class VacationService {
+    public int calculateVacationMonths (int income, int expense, int threshold) {
 
         int money = 0;
-
+        int vacationMonth = 0;
         int month;
-        for (month = 0; month <= 12; month++) {
-            if (money <= treshold) {
-                System.out.println("Месяц " + month++ + "." + " Денег " + money + " Придется работать. " + "Заработал " + income + "," + "потратил -" + expense);
+        for (month = 1; month <= 12; month++) {
+            if (money <= threshold) {
+                System.out.println("Месяц " + month + "." + " Денег " + money + " Придется работать. " + "Заработал " + income + "," + "потратил -" + expense);
                 money = money + income - expense;
             } else {
-                System.out.println("Месяц " + month++ + "." + " Денег " + money + " Буду отдыхать. " + "Заработал " + income + "," + "потратил -" + expense);
+                System.out.println("Месяц " + month + "." + " Денег " + money + " Буду отдыхать. " + "Заработал " + income + "," + "потратил -" + expense);
                 money = (money - expense) / 3;
             }
         }
-        return month;
+        return vacationMonth;
     }
 }
 
